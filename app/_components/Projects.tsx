@@ -125,7 +125,7 @@ const Projects = () => {
                 {PROJECTS.map((project, index) => (
                     <Link
                         href={`/projects/${project.slug}`}
-                        className="group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none group-hover/projects:opacity-30 hover:!opacity-100 transition-all"
+                        className="group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
                         key={project.title}
                         onMouseEnter={() => handleMouseEnter(project.slug)}
                     >
