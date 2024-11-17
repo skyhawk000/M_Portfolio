@@ -86,7 +86,7 @@ const Navbar = () => {
 
             <div
                 className={cn(
-                    'fixed top-0 right-0 h-screen bg-background-light w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-300 z-[3] overflow-y-auto  gap-y-14',
+                    'fixed top-0 right-0 h-[100dvh] bg-background-light w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-300 z-[3] overflow-y-auto  gap-y-14',
                     'flex flex-col lg:justify-center py-10',
                     { 'translate-x-0': isMenuOpen },
                 )}
