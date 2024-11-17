@@ -8,4 +8,7 @@
     "cSpell.words": [
         "roboto"
     ],
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
 }

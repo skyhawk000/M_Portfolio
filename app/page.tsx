@@ -104,7 +104,7 @@ export default function Home() {
         <>
             {/* start::banner */}
             <section className="relative max-md:pb-36" id="banner">
-                <div className="container h-screen min-h-[800px] flex justify-between items-center max-md:flex-col">
+                <div className="container h-screen min-h-[530px] flex justify-between items-center max-md:flex-col">
                     <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
                         <h1 className="leading-[.95] text-6xl sm:text-[80px] font-anton">
                             <span className="text-primary">FRONTEND</span>

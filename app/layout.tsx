@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import ParticleBackground from '@/components/ParticleBackground';
 import Navbar from '@/components/Navbar';
+import CustomCursor from '@/components/CustomCursor';
 
 const antonFont = Anton({
     weight: '400',
@@ -49,6 +50,7 @@ export default function RootLayout({
                     <main>{children}</main>
                     <Footer />
 
+                    <CustomCursor />
                     <ScrollProgressIndicator />
                     <ParticleBackground />
                 </ReactLenis>

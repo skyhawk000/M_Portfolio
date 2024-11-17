@@ -1,9 +1,10 @@
 'use client';
 import { cn } from '@/lib/utils';
+import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState, MouseEvent } from 'react';
 
 const PROJECTS = [
     {
@@ -29,6 +30,8 @@ const PROJECTS = [
     },
 ];
 
+gsap.registerPlugin(useGSAP);
+
 const Projects = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const imageContainer = useRef<HTMLDivElement>(null);
@@ -39,51 +42,56 @@ const Projects = () => {
 
     // update imageRef.current href based on the cursor hover position
     // also update image position
-    useEffect(() => {
-        if (window.innerWidth < 768) {
-            setSelectedProject(null);
-            return;
-        }
-
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!containerRef.current) return;
-            if (!imageContainer.current) return;
-
+    useGSAP(
+        (context, contextSafe) => {
             if (window.innerWidth < 768) {
                 setSelectedProject(null);
                 return;
             }
 
-            const containerRect = containerRef.current?.getBoundingClientRect();
-            const imageRect = imageContainer.current.getBoundingClientRect();
-            const offsetTop = e.clientY - containerRect.y;
+            const handleMouseMove = contextSafe?.((e: MouseEvent) => {
+                if (!containerRef.current) return;
+                if (!imageContainer.current) return;
 
-            // if cursor is outside the container, hide the image
-            if (
-                containerRect.y > e.clientY ||
-                containerRect.bottom < e.clientY ||
-                containerRect.x > e.clientX ||
-                containerRect.right < e.clientX
-            ) {
-                return gsap.to(imageContainer.current, {
-                    duration: 0.3,
-                    opacity: 0,
+                if (window.innerWidth < 768) {
+                    setSelectedProject(null);
+                    return;
+                }
+
+                const containerRect =
+                    containerRef.current?.getBoundingClientRect();
+                const imageRect =
+                    imageContainer.current.getBoundingClientRect();
+                const offsetTop = e.clientY - containerRect.y;
+
+                // if cursor is outside the container, hide the image
+                if (
+                    containerRect.y > e.clientY ||
+                    containerRect.bottom < e.clientY ||
+                    containerRect.x > e.clientX ||
+                    containerRect.right < e.clientX
+                ) {
+                    return gsap.to(imageContainer.current, {
+                        duration: 0.3,
+                        opacity: 0,
+                    });
+                }
+
+                gsap.to(imageContainer.current, {
+                    y: offsetTop - imageRect.height / 2,
+                    duration: 1,
+                    opacity: 1,
                 });
-            }
+            }) as any;
 
-            gsap.to(imageContainer.current, {
-                y: offsetTop - imageRect.height / 2,
-                duration: 1,
-                opacity: 1,
-            });
-        };
+            window.addEventListener('mousemove', handleMouseMove);
 
-        window.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [containerRef.current]);
+            return () => {
+                window.removeEventListener('mousemove', handleMouseMove);
+            };
+        },
+        [containerRef.current],
+    );
 
     const handleMouseEnter = (slug: string) => {
         if (window.innerWidth < 768) {
@@ -98,7 +106,7 @@ const Projects = () => {
         <div className="group/projects relative" ref={containerRef}>
             {selectedProject !== null && (
                 <div
-                    className="max-md:hidden absolute right-0 top-0 z-[1] pointer-events-none w-[200px] xl:w-[350px] aspect-[3/4] overflow-hidden"
+                    className="max-md:hidden absolute right-0 top-0 z-[1] pointer-events-none w-[200px] xl:w-[350px] aspect-[3/4] overflow-hidden opacity-0"
                     ref={imageContainer}
                 >
                     {PROJECTS.map((project) => (
@@ -121,7 +129,7 @@ const Projects = () => {
                 </div>
             )}
 
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col max-md:gap-10">
                 {PROJECTS.map((project, index) => (
                     <Link
                         href={`/projects/${project.slug}`}
@@ -138,6 +146,7 @@ const Projects = () => {
                                 className={cn('w-full object-cover mb-10')}
                                 ref={imageRef}
                                 key={project.slug}
+                                loading="lazy"
                             />
                         )}
                         <div className="flex gap-5">

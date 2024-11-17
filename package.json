@@ -10,6 +10,7 @@
         "svgr:icons": "svgr --title-prop --no-dimensions --typescript -d components/icons -- components/icons/svgs"
     },
     "dependencies": {
+        "@gsap/react": "^2.1.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "gsap": "^3.12.5",
