@@ -78,6 +78,9 @@ export default {
             transitionDuration: {
                 '7000': '7s',
             },
+            screens: {
+                xs: '420px',
+            },
         },
     },
     plugins: [tailwindAnimate],

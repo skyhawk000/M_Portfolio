@@ -16,14 +16,16 @@ const ScrollProgressIndicator = () => {
             }
         };
 
+        handleScroll();
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    });
+    }, []);
 
     return (
         <div className="fixed top-1/2 right-[2%] w-1.5 h-[100px] rounded-full bg-background-light">
             <div
-                className="w-full h-1/2 bg-primary rounded-full"
+                className="w-full bg-primary rounded-full"
                 ref={scrollBarRef}
             ></div>
         </div>

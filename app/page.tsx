@@ -103,10 +103,10 @@ export default function Home() {
     return (
         <>
             {/* start::banner */}
-            <section className="relative" id="banner">
-                <div className="container h-screen flex justify-between items-center ">
-                    <div className="max-w-[544px]">
-                        <h1 className="leading-[.95] text-[80px] font-anton">
+            <section className="relative max-md:pb-36" id="banner">
+                <div className="container h-screen min-h-[800px] flex justify-between items-center max-md:flex-col">
+                    <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
+                        <h1 className="leading-[.95] text-6xl sm:text-[80px] font-anton">
                             <span className="text-primary">FRONTEND</span>
                             <br /> <span className="ml-4">DEVELOPER</span>
                         </h1>
@@ -125,9 +125,9 @@ export default function Home() {
                         </Button>
                     </div>
 
-                    <div className="absolute bottom-[10%] right-[4%] flex flex-col gap-12 text-right">
+                    <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">
                         <div className="">
-                            <h5 className="text-4xl font-anton text-primary mb-1.5">
+                            <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
                                 3+
                             </h5>
                             <p className="text-muted-foreground">
@@ -135,7 +135,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="">
-                            <h5 className="text-4xl font-anton text-primary mb-1.5">
+                            <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
                                 80+
                             </h5>
                             <p className="text-muted-foreground">
@@ -143,7 +143,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="">
-                            <h5 className="text-4xl font-anton text-primary mb-1.5">
+                            <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
                                 10K+
                             </h5>
                             <p className="text-muted-foreground">
@@ -157,7 +157,7 @@ export default function Home() {
 
             <section className="pb-section" id="about-me">
                 <div className="container">
-                    <h2 className="text-6xl font-thin mb-20">
+                    <h2 className="text-4xl md:text-6xl font-thin mb-20">
                         I believe in a user centered design approach, ensuring
                         that every project I work on is tailored to meet the
                         specific needs of its users.
@@ -167,11 +167,11 @@ export default function Home() {
                         This is me.
                     </p>
 
-                    <div className="grid grid-cols-12 mt-9">
-                        <div className="col-span-5">
+                    <div className="grid md:grid-cols-12 mt-9">
+                        <div className="md:col-span-5">
                             <p className="text-5xl">Hi, I&apos;m Tajmirul.</p>
                         </div>
-                        <div className="col-span-7">
+                        <div className="md:col-span-7">
                             <div className="text-lg text-muted-foreground max-w-[450px]">
                                 <p>
                                     I&apos;m a 17 year-old passionate fullstack
@@ -200,13 +200,13 @@ export default function Home() {
 
                     <div className="space-y-20">
                         {Object.entries(MY_STACK).map(([key, value]) => (
-                            <div className="grid grid-cols-12" key={key}>
-                                <div className="col-span-5">
+                            <div className="grid sm:grid-cols-12" key={key}>
+                                <div className="sm:col-span-5">
                                     <p className="text-5xl font-anton leading-none text-muted-foreground uppercase">
                                         {key}
                                     </p>
                                 </div>
-                                <div className="col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
+                                <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
                                     {value.map((item) => (
                                         <div
                                             className="flex gap-3.5 items-center leading-none"
