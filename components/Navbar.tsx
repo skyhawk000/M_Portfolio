@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { MoveUpRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const COLORS = [
     'bg-yellow-500 text-black',
@@ -46,7 +47,7 @@ const MENU_LINKS = [
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // const router = useRouter();
+    const router = useRouter();
 
     return (
         <>
@@ -120,10 +121,10 @@ const Navbar = () => {
                                 {MENU_LINKS.map((link, idx) => (
                                     <li key={link.name}>
                                         <button
-                                            // onClick={() => {
-                                            //     router.push(link.url);
-                                            //     setIsMenuOpen(false);
-                                            // }}
+                                            onClick={() => {
+                                                router.push(link.url);
+                                                setIsMenuOpen(false);
+                                            }}
                                             className="group text-xl flex items-center gap-3"
                                         >
                                             <span
