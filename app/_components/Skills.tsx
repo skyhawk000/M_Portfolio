@@ -12,50 +12,50 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const Skills = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // useGSAP(
-    //     () => {
-    //         const slideUpEl =
-    //             containerRef.current?.querySelectorAll('.slide-up');
+    useGSAP(
+        () => {
+            const slideUpEl =
+                containerRef.current?.querySelectorAll('.slide-up');
 
-    //         if (!slideUpEl?.length) return;
+            if (!slideUpEl?.length) return;
 
-    //         const tl = gsap.timeline({
-    //             scrollTrigger: {
-    //                 trigger: containerRef.current,
-    //                 start: 'top 80%',
-    //                 end: 'bottom 50%',
-    //                 scrub: true,
-    //             },
-    //         });
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: 'top 80%',
+                    end: 'bottom 50%',
+                    scrub: true,
+                },
+            });
 
-    //         tl.from('.slide-up', {
-    //             opacity: 0,
-    //             y: 40,
-    //             ease: 'none',
-    //             stagger: 0.4,
-    //         });
-    //     },
-    //     { scope: containerRef },
-    // );
+            tl.from('.slide-up', {
+                opacity: 0,
+                y: 40,
+                ease: 'none',
+                stagger: 0.4,
+            });
+        },
+        { scope: containerRef },
+    );
 
-    // useGSAP(
-    //     () => {
-    //         const tl = gsap.timeline({
-    //             scrollTrigger: {
-    //                 trigger: containerRef.current,
-    //                 start: 'bottom 50%',
-    //                 end: 'bottom 10%',
-    //                 scrub: 1,
-    //             },
-    //         });
+    useGSAP(
+        () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: 'bottom 50%',
+                    end: 'bottom 10%',
+                    scrub: 1,
+                },
+            });
 
-    //         tl.to(containerRef.current, {
-    //             y: -150,
-    //             opacity: 0,
-    //         });
-    //     },
-    //     { scope: containerRef },
-    // );
+            tl.to(containerRef.current, {
+                y: -150,
+                opacity: 0,
+            });
+        },
+        { scope: containerRef },
+    );
 
     return (
         <section id="my-stack" ref={containerRef}>
