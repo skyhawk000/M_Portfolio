@@ -73,10 +73,10 @@ const AboutMe = () => {
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                I&apos;m a 17 year-old passionate fullstack web
-                                developer dedicated to turning ideas into
-                                creative solutions. I specialize in creating
-                                seamless and intuitive user experiences.
+                                I&apos;m a frontend web developer dedicated to
+                                turning ideas into creative solutions. I
+                                specialize in creating seamless and intuitive
+                                user experiences.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
                                 I&apos;m involved in every step of the process:

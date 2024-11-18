@@ -15,3 +15,13 @@ export type Variant =
     | 'dark'
     | 'link'
     | 'no-color';
+
+export interface IProject {
+    title: string;
+    description: string;
+    techStack: string[];
+    image: string;
+    slug: string;
+    liveUrl?: string;
+    sourceCode?: string;
+}

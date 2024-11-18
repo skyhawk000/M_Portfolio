@@ -1,3 +1,5 @@
+import { IProject } from '@/types';
+
 export const MY_STACK = {
     frontend: [
         {
@@ -27,6 +29,14 @@ export const MY_STACK = {
         {
             name: 'GSAP',
             icon: '/logo/gsap.png',
+        },
+        {
+            name: 'Frammer Motion',
+            icon: '/logo/framer-motion.png',
+        },
+        {
+            name: 'SASS',
+            icon: '/logo/sass.png',
         },
         {
             name: 'Bootstrap',
@@ -81,27 +91,49 @@ export const MY_STACK = {
     ],
 };
 
-export const PROJECTS = [
+export const PROJECTS: IProject[] = [
     {
-        title: 'E-commerce Website',
-        slug: 'e-commerce',
-        description: 'A fullstack e-commerce website',
-        techStack: ['React', 'Node.js', 'MongoDB'],
-        image: '/projects/1.jpg',
+        title: 'Epikcart',
+        slug: 'epikcart',
+        description: 'A multi-vendor e-commerce website',
+        techStack: ['React', 'Redux', 'React i18n'],
+        image: '/projects/epikcart.jpg',
+        liveUrl: 'https://demo.epikcart.siphertech.com/',
     },
     {
-        title: 'Portfolio Website',
-        slug: 'portfolio',
-        description: 'A personal portfolio website',
-        techStack: ['React', 'Next.js', 'Tailwind CSS'],
-        image: '/projects/2.jpg',
+        title: 'Resume Roaster',
+        slug: 'resume-roaster',
+        description: 'A resume building community platform',
+        techStack: ['GPT-4', 'Next.js', 'MongoDB'],
+        image: '/projects/resume-roaster.jpg',
+        liveUrl: 'https://resume-roaster.vercel.app/',
     },
     {
-        title: 'Social Media App',
-        slug: 'social-media',
-        description: 'A fullstack social media app',
-        techStack: ['React', 'Node.js', 'MongoDB'],
-        image: '/projects/3.jpg',
+        title: 'Real Estate',
+        slug: 'property-pro',
+        description: 'A modern real estate listing platform',
+        techStack: ['React.js', 'Redux', 'Tailwind CSS', 'React i18n'],
+        image: '/projects/property-pro.jpg',
+        liveUrl: 'https://demo.propertypro.siphertech.com/',
+    },
+    {
+        title: 'Consulting Finance',
+        slug: 'Crenotive',
+        description:
+            'Creative, eye-catching, and responsive website that is perfect for a business. It contains multiple pages.',
+        techStack: ['HTML', 'CSS & SCSS', 'Javascript', 'Bootstrap'],
+        image: '/projects/consulting-finance.jpg',
+        sourceCode: 'https://github.com/Tajmirul/crenotive',
+        liveUrl: 'https://crenotive.netlify.app/',
+    },
+    {
+        title: 'devLinks',
+        slug: 'devLinks',
+        description: 'One of the most challenging projects in Frontend Mentor',
+        techStack: ['Next.js', 'Formik', 'Drag & Drop', 'Tailwind CSS'],
+        image: '/projects/devLinks.jpg',
+        sourceCode: 'https://github.com/Tajmirul/devsLink',
+        liveUrl: 'https://devlinks-demo.vercel.app/auth/signin',
     },
 ];
 

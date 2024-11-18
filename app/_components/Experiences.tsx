@@ -16,9 +16,10 @@ const Experiences = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 80%',
+                    start: 'top 60%',
                     end: 'bottom 50%',
                     toggleActions: 'restart none none reverse',
+                    scrub: 1,
                 },
             });
 
@@ -36,8 +37,8 @@ const Experiences = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'bottom 50%',
-                    end: 'bottom 10%',
+                    start: 'bottom 70%',
+                    end: 'bottom 20%',
                     scrub: 1,
                 },
             });

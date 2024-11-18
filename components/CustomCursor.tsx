@@ -9,6 +9,8 @@ const CustomCursor = () => {
     const svgRef = useRef<SVGSVGElement>(null);
 
     useGSAP((context, contextSafe) => {
+        if (window.innerWidth < 768) return;
+
         const handleMouseMove = contextSafe?.((e: MouseEvent) => {
             if (!svgRef.current) return;
 
@@ -30,13 +32,12 @@ const CustomCursor = () => {
         };
     });
 
-    // cursor shape
     return (
         <svg
             width="33"
             height="38"
             viewBox="0 0 33 38"
-            className="fixed top-0 left-0 opacity-0 z-[50] pointer-events-none" // -translate-x-1/2 -translate-y-1/2
+            className="hidden md:block fixed top-0 left-0 opacity-0 z-[50] pointer-events-none" // -translate-x-1/2 -translate-y-1/2
             fill="none"
             id="cursor"
             strokeWidth="2"

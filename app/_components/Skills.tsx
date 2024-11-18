@@ -77,13 +77,15 @@ const Skills = () => {
                                         className="slide-up flex gap-3.5 items-center leading-none"
                                         key={item.name}
                                     >
-                                        <Image
-                                            src={item.icon}
-                                            alt={item.name}
-                                            width="40"
-                                            height="40"
-                                            className="h-10"
-                                        />
+                                        <div>
+                                            <Image
+                                                src={item.icon}
+                                                alt={item.name}
+                                                width="40"
+                                                height="40"
+                                                className="max-h-10"
+                                            />
+                                        </div>
                                         <span className="text-2xl capitalize">
                                             {item.name}
                                         </span>

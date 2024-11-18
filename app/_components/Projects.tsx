@@ -1,4 +1,5 @@
 'use client';
+import SectionTitle from '@/components/SectionTitle';
 import { PROJECTS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
@@ -73,6 +74,26 @@ const Projects = () => {
         { scope: containerRef, dependencies: [containerRef.current] },
     );
 
+    useGSAP(
+        () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: 'top bottom',
+                    end: 'top 80%',
+                    toggleActions: 'restart none none reverse',
+                    scrub: 1,
+                },
+            });
+
+            tl.from(containerRef.current, {
+                y: 150,
+                opacity: 0,
+            });
+        },
+        { scope: containerRef },
+    );
+
     const handleMouseEnter = (slug: string) => {
         if (window.innerWidth < 768) {
             setSelectedProject(null);
@@ -83,81 +104,104 @@ const Projects = () => {
     };
 
     return (
-        <div className="group/projects relative" ref={containerRef}>
-            {selectedProject !== null && (
-                <div
-                    className="max-md:hidden absolute right-0 top-0 z-[1] pointer-events-none w-[200px] xl:w-[350px] aspect-[3/4] overflow-hidden opacity-0"
-                    ref={imageContainer}
-                >
-                    {PROJECTS.map((project) => (
-                        <Image
-                            src={project.image}
-                            alt="Project"
-                            width="400"
-                            height="500"
-                            className={cn(
-                                'absolute inset-0 transition-all duration-500 w-full h-full object-cover',
-                                {
-                                    'opacity-0':
-                                        project.slug !== selectedProject,
-                                },
-                            )}
-                            ref={imageRef}
-                            key={project.slug}
-                        />
-                    ))}
-                </div>
-            )}
+        <section className="pb-section" id="selected-projects">
+            <div className="container">
+                <SectionTitle title="SELECTED PROJECTS" />
 
-            <div className="flex flex-col max-md:gap-10" ref={projectListRef}>
-                {PROJECTS.map((project, index) => (
-                    <Link
-                        href={`/projects/${project.slug}`}
-                        className="project-item group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
-                        key={project.title}
-                        onMouseEnter={() => handleMouseEnter(project.slug)}
+                <div className="group/projects relative" ref={containerRef}>
+                    {selectedProject !== null && (
+                        <div
+                            className="max-md:hidden absolute right-0 top-0 z-[1] pointer-events-none w-[200px] xl:w-[350px] aspect-[3/4] overflow-hidden opacity-0"
+                            ref={imageContainer}
+                        >
+                            {PROJECTS.map((project) => (
+                                <Image
+                                    src={project.image}
+                                    alt="Project"
+                                    width="400"
+                                    height="500"
+                                    className={cn(
+                                        'absolute inset-0 transition-all duration-500 w-full h-full object-cover',
+                                        {
+                                            'opacity-0':
+                                                project.slug !==
+                                                selectedProject,
+                                        },
+                                    )}
+                                    ref={imageRef}
+                                    key={project.slug}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                    <div
+                        className="flex flex-col max-md:gap-10"
+                        ref={projectListRef}
                     >
-                        {selectedProject === null && (
-                            <Image
-                                src={project.image}
-                                alt="Project"
-                                width="400"
-                                height="500"
-                                className={cn('w-full object-cover mb-10')}
-                                ref={imageRef}
-                                key={project.slug}
-                                loading="lazy"
-                            />
-                        )}
-                        <div className="flex gap-5">
-                            <div className="font-anton text-muted-foreground">
-                                _{(index + 1).toString().padStart(2, '0')}.
-                            </div>
-                            <div className="">
-                                <h4 className="text-5xl xs:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
-                                    {project.title}
-                                </h4>
-                                <div className="mt-5 flex flex-wrap gap-3 text-muted-foreground">
-                                    {project.techStack.map((tech, idx) => (
-                                        <div
-                                            className="gap-3 flex items-center"
-                                            key={tech}
-                                        >
-                                            <span className="">{tech}</span>
-                                            {idx !==
-                                                project.techStack.length -
-                                                    1 && (
-                                                <span className="inline-block size-2 rounded-full bg-background-light"></span>
+                        {PROJECTS.map((project, index) => (
+                            <Link
+                                href={`/projects/${project.slug}`}
+                                className="project-item group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
+                                key={project.title}
+                                onMouseEnter={() =>
+                                    handleMouseEnter(project.slug)
+                                }
+                            >
+                                {selectedProject === null && (
+                                    <Image
+                                        src={project.image}
+                                        alt="Project"
+                                        width="300"
+                                        height="200"
+                                        className={cn(
+                                            'w-full object-cover mb-6 aspect-[3/2] object-top',
+                                        )}
+                                        ref={imageRef}
+                                        key={project.slug}
+                                        loading="lazy"
+                                    />
+                                )}
+                                <div className="flex gap-5">
+                                    <div className="font-anton text-muted-foreground">
+                                        _
+                                        {(index + 1)
+                                            .toString()
+                                            .padStart(2, '0')}
+                                        .
+                                    </div>
+                                    <div className="">
+                                        <h4 className="text-5xl xs:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
+                                            {project.title}
+                                        </h4>
+                                        <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
+                                            {project.techStack.map(
+                                                (tech, idx) => (
+                                                    <div
+                                                        className="gap-3 flex items-center"
+                                                        key={tech}
+                                                    >
+                                                        <span className="">
+                                                            {tech}
+                                                        </span>
+                                                        {idx !==
+                                                            project.techStack
+                                                                .length -
+                                                                1 && (
+                                                            <span className="inline-block size-2 rounded-full bg-background-light"></span>
+                                                        )}
+                                                    </div>
+                                                ),
                                             )}
                                         </div>
-                                    ))}
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -12,7 +12,9 @@ const ScrollProgressIndicator = () => {
                 const scrollY = window.scrollY;
                 const scrollProgress = (scrollY / scrollableHeight) * 100;
 
-                scrollBarRef.current.style.height = `${scrollProgress}%`;
+                scrollBarRef.current.style.transform = `translateY(-${
+                    100 - scrollProgress
+                }%)`;
             }
         };
 
@@ -23,9 +25,9 @@ const ScrollProgressIndicator = () => {
     }, []);
 
     return (
-        <div className="fixed top-1/2 right-[2%] w-1.5 h-[100px] rounded-full bg-background-light">
+        <div className="fixed top-1/2 right-[2%] w-1.5 h-[100px] rounded-full bg-background-light overflow-hidden">
             <div
-                className="w-full bg-primary rounded-full"
+                className="w-full bg-primary rounded-full h-full"
                 ref={scrollBarRef}
             ></div>
         </div>
