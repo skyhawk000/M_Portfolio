@@ -162,7 +162,7 @@ const Projects = () => {
                                         loading="lazy"
                                     />
                                 )}
-                                <div className="flex gap-5">
+                                <div className="flex gap-2 md:gap-5">
                                     <div className="font-anton text-muted-foreground">
                                         _
                                         {(index + 1)
