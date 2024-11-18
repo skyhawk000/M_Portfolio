@@ -83,7 +83,7 @@ const Banner = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: '10% top',
+                    start: 'bottom 80%',
                     end: 'bottom 50%',
                     scrub: true,
                 },
