@@ -24,7 +24,7 @@ const Skills = () => {
                     trigger: containerRef.current,
                     start: 'top 80%',
                     end: 'bottom 50%',
-                    scrub: true,
+                    scrub: 0.5,
                 },
             });
 
