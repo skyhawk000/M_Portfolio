@@ -69,7 +69,7 @@ const ProjectDetails = ({ project }: Props) => {
                 </TransitionLink>
 
                 <div className="flex items-start justify-between mb-10">
-                    <h1 className="project-title opacity-0 text-[100px] font-anton overflow-hidden">
+                    <h1 className="project-title opacity-0 text-4xl md:text-[100px] font-anton overflow-hidden">
                         <span className="inline-block translate-y-full">
                             {project.title}
                         </span>
@@ -99,16 +99,16 @@ const ProjectDetails = ({ project }: Props) => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-12 mb-10">
-                    <div className="col-span-7 fade-in-later opacity-0">
-                        <p className="text-lg text-muted-foreground font-anton pb-3 border-b mb-7">
+                <div className="grid md:grid-cols-12 gap-y-12 mb-10">
+                    <div className="md:col-span-7 fade-in-later opacity-0">
+                        <p className="text-lg text-muted-foreground font-anton pb-3 border-b mb-4 md:mb-7">
                             Description
                         </p>
 
                         <p className="text-lg">{project.description}</p>
                     </div>
-                    <div className="col-span-5 fade-in-later opacity-0">
-                        <p className="text-lg text-muted-foreground font-anton pb-3 border-b mb-7">
+                    <div className="md:col-span-5 fade-in-later opacity-0">
+                        <p className="text-lg text-muted-foreground font-anton pb-3 border-b mb-4 md:mb-7">
                             Technologies
                         </p>
 
