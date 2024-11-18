@@ -15,7 +15,7 @@ const AboutMe = () => {
                 scrollTrigger: {
                     id: 'about-me-in',
                     trigger: container.current,
-                    start: 'top 60%',
+                    start: 'top 70%',
                     end: 'bottom bottom',
                     scrub: 0.5,
                 },
