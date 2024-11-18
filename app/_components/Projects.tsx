@@ -171,7 +171,7 @@ const Projects = () => {
                                         .
                                     </div>
                                     <div className="">
-                                        <h4 className="text-5xl xs:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
+                                        <h4 className="text-4xl xs:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
                                             {project.title}
                                         </h4>
                                         <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
