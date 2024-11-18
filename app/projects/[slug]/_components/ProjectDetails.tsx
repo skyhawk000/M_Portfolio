@@ -24,24 +24,11 @@ const ProjectDetails = ({ project }: Props) => {
             gsap.set('.project-title', { autoAlpha: 1 });
             const tl = gsap.timeline();
 
-            // projectTitle will be at the center of the screen at first
-            // then it will be animated to its original position
-            const projectTitle =
-                containerRef.current.querySelector('.project-title');
-
-            const projectTitleRect = projectTitle!.getBoundingClientRect();
-            const containerRect = containerRef.current.getBoundingClientRect();
-
-            const topOffset =
-                window.innerHeight / 2 -
-                containerRect.y -
-                projectTitleRect.height / 2;
-
             tl.to('.project-title span', {
                 y: 0,
             });
             tl.from('.project-title', {
-                y: topOffset,
+                y: 200,
                 delay: 0.5,
             });
 
