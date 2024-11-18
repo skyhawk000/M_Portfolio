@@ -28,7 +28,7 @@ const ProjectDetails = ({ project }: Props) => {
                 y: 0,
             });
             tl.from('.project-title', {
-                y: 200,
+                y: 100,
                 delay: 0.5,
             });
 
