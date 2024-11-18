@@ -14,12 +14,6 @@ const CustomCursor = () => {
 
             const { clientX, clientY } = e;
 
-            console.log({ clientX, clientY });
-            // const { innerWidth, innerHeight } = window;
-
-            // const x = clientX / innerWidth;
-            // const y = clientY / innerHeight;
-
             gsap.to(svgRef.current, {
                 x: clientX,
                 y: clientY,

@@ -1,39 +1,18 @@
 'use client';
+import { PROJECTS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useRef, useState, MouseEvent } from 'react';
 
-const PROJECTS = [
-    {
-        title: 'E-commerce Website',
-        slug: 'e-commerce',
-        description: 'A fullstack e-commerce website',
-        techStack: ['React', 'Node.js', 'MongoDB'],
-        image: '/projects/1.jpg',
-    },
-    {
-        title: 'Portfolio Website',
-        slug: 'portfolio',
-        description: 'A personal portfolio website',
-        techStack: ['React', 'Next.js', 'Tailwind CSS'],
-        image: '/projects/2.jpg',
-    },
-    {
-        title: 'Social Media App',
-        slug: 'social-media',
-        description: 'A fullstack social media app',
-        techStack: ['React', 'Node.js', 'MongoDB'],
-        image: '/projects/3.jpg',
-    },
-];
-
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Projects = () => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const projectListRef = useRef<HTMLDivElement>(null);
     const imageContainer = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
     const [selectedProject, setSelectedProject] = useState<string | null>(
@@ -44,6 +23,7 @@ const Projects = () => {
     // also update image position
     useGSAP(
         (context, contextSafe) => {
+            // show image on hover
             if (window.innerWidth < 768) {
                 setSelectedProject(null);
                 return;
@@ -90,7 +70,7 @@ const Projects = () => {
                 window.removeEventListener('mousemove', handleMouseMove);
             };
         },
-        [containerRef.current],
+        { scope: containerRef, dependencies: [containerRef.current] },
     );
 
     const handleMouseEnter = (slug: string) => {
@@ -129,11 +109,11 @@ const Projects = () => {
                 </div>
             )}
 
-            <div className="flex flex-col max-md:gap-10">
+            <div className="flex flex-col max-md:gap-10" ref={projectListRef}>
                 {PROJECTS.map((project, index) => (
                     <Link
                         href={`/projects/${project.slug}`}
-                        className="group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
+                        className="project-item group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
                         key={project.title}
                         onMouseEnter={() => handleMouseEnter(project.slug)}
                     >
