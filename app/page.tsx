@@ -6,12 +6,12 @@ import Projects from './_components/Projects';
 
 export default function Home() {
     return (
-        <>
+        <div className="page-">
             <Banner />
             <AboutMe />
             <Skills />
             <Experiences />
             <Projects />
-        </>
+        </div>
     );
 }

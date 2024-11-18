@@ -79,11 +79,12 @@ const AboutMe = () => {
                                 user experiences.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                I&apos;m involved in every step of the process:
-                                from discovery and design to development,
-                                testing, and deployment. I focus on delivering
-                                high-quality, scalable results that drive
-                                positive user experiences.
+                                My approach focuses on creating scalable,
+                                high-performing solutions tailored to both user
+                                needs and business objectives. By prioritizing
+                                performance, accessibility, and responsiveness,
+                                I strive to deliver experiences that not only
+                                engage users but also drive tangible results.
                             </p>
                         </div>
                     </div>

@@ -1,6 +1,5 @@
-import { UrlObject } from 'url';
-
-export type Next_Page_Url = UrlObject;
+export type Next_Page_Url = string;
+// UrlObject;
 // | __next_route_internal_types__.StaticRoutes
 // | __next_route_internal_types__.DynamicRoutes;
 
@@ -20,7 +19,8 @@ export interface IProject {
     title: string;
     description: string;
     techStack: string[];
-    image: string;
+    thumbnail: string;
+    images: string;
     slug: string;
     liveUrl?: string;
     sourceCode?: string;

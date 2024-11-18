@@ -3,27 +3,13 @@ import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { MoveUpRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 
 const COLORS = [
     'bg-yellow-500 text-black',
     'bg-blue-500 text-white',
     'bg-teal-500 text-black',
     'bg-indigo-500 text-white',
-];
-
-const SOCIAL_LINKS = [
-    {
-        name: 'LinkedIn',
-        url: 'https://linkedin.com/in/tajmirul',
-    },
-    {
-        name: 'GitHub',
-        url: 'https://github.com',
-    },
-    {
-        name: 'Twitter',
-        url: 'https://twitter.com',
-    },
 ];
 
 const MENU_LINKS = [
@@ -54,23 +40,25 @@ const Navbar = () => {
             <div className="sticky top-0 z-[4]">
                 <button
                     className={cn(
-                        'size-12 absolute top-5 right-5 md:right-10 z-[2]',
+                        'group size-12 absolute top-5 right-5 md:right-10 z-[2]',
                     )}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <span
                         className={cn(
-                            'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px]',
+                            'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px] ',
                             {
                                 'rotate-45 -translate-y-1/2': isMenuOpen,
+                                'group-hover:rotate-12': !isMenuOpen,
                             },
                         )}
                     ></span>
                     <span
                         className={cn(
-                            'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px]',
+                            'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px] ',
                             {
                                 '-rotate-45 -translate-y-1/2': isMenuOpen,
+                                'group-hover:-rotate-12': !isMenuOpen,
                             },
                         )}
                     ></span>
@@ -89,11 +77,20 @@ const Navbar = () => {
 
             <div
                 className={cn(
-                    'fixed top-0 right-0 h-[100dvh] bg-background-light w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-300 z-[3] overflow-y-auto  gap-y-14',
+                    'fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-y-auto overflow-x-hidden gap-y-14',
                     'flex flex-col lg:justify-center py-10',
                     { 'translate-x-0': isMenuOpen },
                 )}
             >
+                <div
+                    className={cn(
+                        'absolute inset-0 scale-150 translate-x-1/2 rounded-[50%] bg-background-light duration-700 delay-150 z-[-1]',
+                        {
+                            'translate-x-0': isMenuOpen,
+                        },
+                    )}
+                ></div>
+
                 <div className="grow flex md:items-center w-full max-w-[300px] mx-8 sm:mx-auto">
                     <div className="flex gap-10 lg:justify-between max-lg:flex-col w-full">
                         <div className="max-lg:order-2">
@@ -107,7 +104,7 @@ const Navbar = () => {
                                             href={link.url}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="text-lg hover:underline"
+                                            className="text-lg capitalize hover:underline"
                                         >
                                             {link.name}
                                         </a>
@@ -151,8 +148,8 @@ const Navbar = () => {
 
                 <div className="w-full max-w-[300px] mx-8 sm:mx-auto">
                     <p className="text-muted-foreground mb-4">GET IN TOUCH</p>
-                    <a href="mailto:tasmirolislam@gmail.com">
-                        tasmirolislam@gmail.com
+                    <a href={`mailto:${GENERAL_INFO.email}`}>
+                        {GENERAL_INFO.email}
                     </a>
                 </div>
             </div>

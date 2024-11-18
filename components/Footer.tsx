@@ -1,3 +1,4 @@
+import { GENERAL_INFO } from '@/lib/data';
 import React from 'react';
 
 const Footer = () => {
@@ -6,10 +7,10 @@ const Footer = () => {
             <div className="container">
                 <p className="text-lg">Have a project in mind?</p>
                 <a
-                    href="mailto:tasmirolislam@gmail.com"
+                    href={`mailto:${GENERAL_INFO.email}`}
                     className="text-3xl sm:text-4xl font-anton inline-block mt-5 mb-10 hover:underline"
                 >
-                    tasmirolislam@gmail.com
+                    {GENERAL_INFO.email}
                 </a>
                 <p className="text-muted-foreground">
                     Copyright © {new Date().getFullYear()} Tajmirul

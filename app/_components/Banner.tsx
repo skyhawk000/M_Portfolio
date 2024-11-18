@@ -1,5 +1,6 @@
 'use client';
 import Button from '@/components/Button';
+import { GENERAL_INFO } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -110,16 +111,19 @@ const Banner = () => {
                         <br /> <span className="ml-4">DEVELOPER</span>
                     </h1>
                     <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
-                        Hi! I am{' '}
+                        Hi! I&apos;m{' '}
                         <span className="font-medium text-foreground">
                             Tajmirul
                         </span>
-                        . An experienced Fullstack Web Developer based in
-                        Bangladesh. With over 2+ years of experience, I help
-                        people to grow their business by providing powerful and
-                        modern Web solutions.
+                        . A creative Frontend Developer with 3+ years of
+                        experience in building high-performance, scalable, and
+                        responsive web solutions.
                     </p>
                     <Button
+                        as="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${GENERAL_INFO.email}&su=${GENERAL_INFO.emailSubject}&body=${GENERAL_INFO.emailBody}`}
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade"
                     >

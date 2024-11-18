@@ -1,11 +1,14 @@
 'use client';
+import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+
+gsap.registerPlugin(useGSAP);
 
 const ParticleBackground = () => {
     const particlesRef = useRef<HTMLDivElement[]>([]);
 
-    useEffect(() => {
+    useGSAP(() => {
         particlesRef.current.forEach((particle) => {
             gsap.set(particle, {
                 width: Math.random() * 3 + 1,

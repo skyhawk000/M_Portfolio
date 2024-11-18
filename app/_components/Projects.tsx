@@ -1,12 +1,12 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
+import TransitionLink from '@/components/TransitionLink';
 import { PROJECTS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useRef, useState, MouseEvent } from 'react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -116,7 +116,7 @@ const Projects = () => {
                         >
                             {PROJECTS.map((project) => (
                                 <Image
-                                    src={project.image}
+                                    src={project.thumbnail}
                                     alt="Project"
                                     width="400"
                                     height="500"
@@ -140,7 +140,7 @@ const Projects = () => {
                         ref={projectListRef}
                     >
                         {PROJECTS.map((project, index) => (
-                            <Link
+                            <TransitionLink
                                 href={`/projects/${project.slug}`}
                                 className="project-item group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
                                 key={project.title}
@@ -150,7 +150,7 @@ const Projects = () => {
                             >
                                 {selectedProject === null && (
                                     <Image
-                                        src={project.image}
+                                        src={project.thumbnail}
                                         alt="Project"
                                         width="300"
                                         height="200"
@@ -196,7 +196,7 @@ const Projects = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
+                            </TransitionLink>
                         ))}
                     </div>
                 </div>
