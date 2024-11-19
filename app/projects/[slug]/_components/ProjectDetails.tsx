@@ -56,7 +56,7 @@ const ProjectDetails = ({ project }: Props) => {
                 </TransitionLink>
 
                 <div className="flex items-start justify-between mb-10">
-                    <h1 className="project-title opacity-0 text-4xl md:text-[100px] font-anton overflow-hidden">
+                    <h1 className="project-title opacity-0 text-4xl md:text-[100px] leading-none font-anton overflow-hidden">
                         <span className="inline-block translate-y-full">
                             {project.title}
                         </span>
