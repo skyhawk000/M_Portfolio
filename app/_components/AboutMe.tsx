@@ -36,8 +36,8 @@ const AboutMe = () => {
                 scrollTrigger: {
                     id: 'about-me-out',
                     trigger: container.current,
-                    start: 'bottom 80%',
-                    end: 'bottom 20%',
+                    start: 'bottom 50%',
+                    end: 'bottom 10%',
                     scrub: 0.5,
                 },
             });

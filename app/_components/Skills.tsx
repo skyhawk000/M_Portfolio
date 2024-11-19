@@ -23,7 +23,7 @@ const Skills = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top 80%',
-                    end: 'bottom 50%',
+                    end: 'bottom 80%',
                     scrub: 0.5,
                 },
             });
