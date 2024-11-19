@@ -118,41 +118,50 @@ export const PROJECTS: IProject[] = [
     {
         title: 'Resume Roaster',
         slug: 'resume-roaster',
-        description: 'A resume building community platform',
-        techStack: ['GPT-4', 'Next.js', 'MongoDB'],
+        techStack: [
+            'GPT-4',
+            'Next.js',
+            'Postgressql',
+            'Prisma',
+            'Tailwind CSS',
+        ],
         thumbnail: '/projects/thumbnail/resume-roaster.jpg',
         images: '/projects/images/resume-roaster.jpg',
         liveUrl: 'https://resume-roaster.vercel.app/',
+        description:
+            'A web application built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, offering tailored resume feedback and professional writing services. It integrates GPT-4 for AI-powered feedback, helping users refine resumes effectively. The platform also features peer-to-peer reviews and a points-based system, making resume improvement a collaborative and rewarding experience. Designed for freshers, experienced professionals, and programmers, Resume Roaster emphasizes job-specific optimization to enhance application success rates.',
     },
     {
         title: 'Real Estate',
         slug: 'property-pro',
-        description: 'A modern real estate listing platform',
         techStack: ['React.js', 'Redux', 'Tailwind CSS', 'React i18n'],
         thumbnail: '/projects/thumbnail/property-pro.jpg',
         images: '/projects/images/property-pro.jpg',
         liveUrl: 'https://demo.propertypro.siphertech.com/',
+        description:
+            'A real estate management application where I developed the frontend using React, Redux, and Tailwind CSS. The platform provides a seamless user experience for managing, viewing, and exploring property listings. It features dynamic state management for efficient data handling and responsive design for accessibility across devices.',
     },
     {
         title: 'Consulting Finance',
-        slug: 'Crenotive',
-        description:
-            'Creative, eye-catching, and responsive website that is perfect for a business. It contains multiple pages.',
+        slug: 'crenotive',
         techStack: ['HTML', 'CSS & SCSS', 'Javascript', 'Bootstrap'],
         thumbnail: '/projects/thumbnail/consulting-finance.jpg',
         images: '/projects/images/consulting-finance.jpg',
         sourceCode: 'https://github.com/Tajmirul/crenotive',
         liveUrl: 'https://crenotive.netlify.app/',
+        description:
+            'I developed Crenotive, a portfolio website using Html, SASS, and jQuery to showcase services and expertise. The design focuses on responsive user experience and effective presentation of professional achievements.',
     },
     {
         title: 'devLinks',
         slug: 'devLinks',
-        description: 'One of the most challenging projects in Frontend Mentor',
         techStack: ['Next.js', 'Formik', 'Drag & Drop', 'Tailwind CSS'],
         thumbnail: '/projects/thumbnail/devLinks.jpg',
         images: '/projects/images/devLinks.jpg',
         sourceCode: 'https://github.com/Tajmirul/devsLink',
         liveUrl: 'https://devlinks-demo.vercel.app/auth/signin',
+        description:
+            'One of the most challenging projects in Frontend Mentor.\n\nI developed a LinkSharing App as part of the Frontend Mentor challenge, utilizing React, Redux, and Tailwind CSS to create a responsive and feature-rich platform. The app allows users to share, save, and explore links, with a focus on intuitive design and smooth navigation. Advanced state management ensures efficient data handling for user interactions.',
     },
 ];
 

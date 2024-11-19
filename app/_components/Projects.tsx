@@ -175,8 +175,9 @@ const Projects = () => {
                                             {project.title}
                                         </h4>
                                         <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
-                                            {project.techStack.map(
-                                                (tech, idx) => (
+                                            {project.techStack
+                                                .slice(0, 3)
+                                                .map((tech, idx) => (
                                                     <div
                                                         className="gap-3 flex items-center"
                                                         key={tech}
@@ -191,8 +192,7 @@ const Projects = () => {
                                                             <span className="inline-block size-2 rounded-full bg-background-light"></span>
                                                         )}
                                                     </div>
-                                                ),
-                                            )}
+                                                ))}
                                         </div>
                                     </div>
                                 </div>
