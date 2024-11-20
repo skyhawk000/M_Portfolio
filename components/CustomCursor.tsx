@@ -3,6 +3,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 
+/*
+<svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.0995 11.0797L3.72518 1.13204C2.28687 0.258253 0.478228 1.44326 0.704999 3.11083L3.28667 22.0953C3.58333 24.2768 7.33319 24.6415 8.3792 22.7043C9.5038 20.6215 10.8639 18.7382 12.43 17.7122C13.996 16.6861 16.2658 16.1911 18.6244 15.9918C20.8181 15.8063 21.9811 12.2227 20.0995 11.0797Z" fill="#DDDDDD"/>
+</svg>
+
+*/
+
 gsap.registerPlugin(useGSAP);
 
 const CustomCursor = () => {
@@ -34,9 +41,9 @@ const CustomCursor = () => {
 
     return (
         <svg
-            width="33"
-            height="38"
-            viewBox="0 0 33 38"
+            width="27"
+            height="30"
+            viewBox="0 0 27 30"
             className="hidden md:block fixed top-0 left-0 opacity-0 z-[50] pointer-events-none" // -translate-x-1/2 -translate-y-1/2
             fill="none"
             id="cursor"
@@ -45,7 +52,7 @@ const CustomCursor = () => {
             xmlns="http://www.w3.org/2000/svg"
             ref={svgRef}
         >
-            <defs>
+            {/* <defs>
                 <linearGradient
                     id="grad-1"
                     x1="0"
@@ -57,11 +64,11 @@ const CustomCursor = () => {
                     <stop offset="0.2" stopColor="rgb(255, 135, 9)"></stop>
                     <stop offset="0.8" stopColor="rgb(247, 189, 248)"></stop>
                 </linearGradient>
-            </defs>
+            </defs> */}
 
             <path
-                d="M31.4275 21.2232L2.60356 3.71227L7.1481 37.1308C7.1481 37.1308 10.0262 25.6598 14.8939 22.4706C19.7615 19.2814 31.4275 21.2232 31.4275 21.2232Z"
-                stroke="url(#grad-1)"
+                d="M20.0995 11.0797L3.72518 1.13204C2.28687 0.258253 0.478228 1.44326 0.704999 3.11083L3.28667 22.0953C3.58333 24.2768 7.33319 24.6415 8.3792 22.7043C9.5038 20.6215 10.8639 18.7382 12.43 17.7122C13.996 16.6861 16.2658 16.1911 18.6244 15.9918C20.8181 15.8063 21.9811 12.2227 20.0995 11.0797Z"
+                className="fill-foreground stroke-background/50"
             />
         </svg>
     );
