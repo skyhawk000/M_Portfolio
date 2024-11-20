@@ -49,7 +49,7 @@ const Navbar = () => {
                             'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px] ',
                             {
                                 'rotate-45 -translate-y-1/2': isMenuOpen,
-                                'group-hover:rotate-12': !isMenuOpen,
+                                'md:group-hover:rotate-12': !isMenuOpen,
                             },
                         )}
                     ></span>
@@ -58,7 +58,7 @@ const Navbar = () => {
                             'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px] ',
                             {
                                 '-rotate-45 -translate-y-1/2': isMenuOpen,
-                                'group-hover:-rotate-12': !isMenuOpen,
+                                'md:group-hover:-rotate-12': !isMenuOpen,
                             },
                         )}
                     ></span>
