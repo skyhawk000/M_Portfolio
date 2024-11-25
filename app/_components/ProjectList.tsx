@@ -1,6 +1,5 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
-import TransitionLink from '@/components/TransitionLink';
 import { PROJECTS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
@@ -8,10 +7,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import React, { useRef, useState, MouseEvent } from 'react';
+import Project from './Project';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const Projects = () => {
+const ProjectList = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const projectListRef = useRef<HTMLDivElement>(null);
     const imageContainer = useRef<HTMLDivElement>(null);
@@ -140,63 +140,13 @@ const Projects = () => {
                         ref={projectListRef}
                     >
                         {PROJECTS.map((project, index) => (
-                            <TransitionLink
-                                href={`/projects/${project.slug}`}
-                                className="project-item group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
-                                key={project.title}
-                                onMouseEnter={() =>
-                                    handleMouseEnter(project.slug)
-                                }
-                            >
-                                {selectedProject === null && (
-                                    <Image
-                                        src={project.thumbnail}
-                                        alt="Project"
-                                        width="300"
-                                        height="200"
-                                        className={cn(
-                                            'w-full object-cover mb-6 aspect-[3/2] object-top',
-                                        )}
-                                        ref={imageRef}
-                                        key={project.slug}
-                                        loading="lazy"
-                                    />
-                                )}
-                                <div className="flex gap-2 md:gap-5">
-                                    <div className="font-anton text-muted-foreground">
-                                        _
-                                        {(index + 1)
-                                            .toString()
-                                            .padStart(2, '0')}
-                                        .
-                                    </div>
-                                    <div className="">
-                                        <h4 className="text-4xl xs:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
-                                            {project.title}
-                                        </h4>
-                                        <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
-                                            {project.techStack
-                                                .slice(0, 3)
-                                                .map((tech, idx) => (
-                                                    <div
-                                                        className="gap-3 flex items-center"
-                                                        key={tech}
-                                                    >
-                                                        <span className="">
-                                                            {tech}
-                                                        </span>
-                                                        {idx !==
-                                                            project.techStack
-                                                                .length -
-                                                                1 && (
-                                                            <span className="inline-block size-2 rounded-full bg-background-light"></span>
-                                                        )}
-                                                    </div>
-                                                ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </TransitionLink>
+                            <Project
+                                index={index}
+                                project={project}
+                                selectedProject={selectedProject}
+                                onMouseEnter={handleMouseEnter}
+                                key={project.slug}
+                            />
                         ))}
                     </div>
                 </div>
@@ -205,4 +155,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default ProjectList;

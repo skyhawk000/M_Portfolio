@@ -50,4 +50,12 @@
     .grid {
         @apply gap-[25px];
     }
+
+    /* external link animation on project listing */
+    #arrow-line {
+    }
+    #arrow-curb {
+    }
+    #box {
+    }
 }

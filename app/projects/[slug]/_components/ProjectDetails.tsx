@@ -27,16 +27,24 @@ const ProjectDetails = ({ project }: Props) => {
             tl.to('.project-title span', {
                 y: 0,
             });
-            tl.from('.project-title', {
-                y: 100,
-                delay: 0.5,
-            });
+            tl.from(
+                '.project-title',
+                {
+                    y: 100,
+                    delay: 0.5,
+                },
+                '<.1',
+            );
 
-            tl.to('.fade-in-later', {
-                autoAlpha: 1,
-                y: 0,
-                stagger: 0.2,
-            });
+            tl.to(
+                '.fade-in-later',
+                {
+                    autoAlpha: 1,
+                    y: 0,
+                    stagger: 0.2,
+                },
+                '<.1',
+            );
 
             // gsap.set('.project-title', { position: 'fixed', })
         },
@@ -55,7 +63,7 @@ const ProjectDetails = ({ project }: Props) => {
                     Back
                 </TransitionLink>
 
-                <div className="flex items-start justify-between mb-10">
+                <div className="flex items-start gap-10 mb-10">
                     <h1 className="project-title opacity-0 text-4xl md:text-[100px] leading-none font-anton overflow-hidden">
                         <span className="inline-block translate-y-full">
                             {project.title}
