@@ -51,8 +51,6 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             '#box',
         ) as SVGPathElement;
 
-        console.log('handleMouseEnter', { index });
-
         gsap.set(box, {
             opacity: 0,
             strokeDasharray: box?.getTotalLength(),
