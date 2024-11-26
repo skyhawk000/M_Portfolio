@@ -59,8 +59,16 @@ export default function RootLayout({
 
                     <a
                         href={`mailto:${GENERAL_INFO.email}`}
-                        className="max-xl:hidden fixed bottom-32 left-0 px-3 tracking-[2px] hover:tracking-[3px] opacity-60 transition-all hover:opacity-100"
+                        className="max-xl:hidden fixed bottom-32 left-0 block px-3 tracking-[2px]hover:tracking-[3px] transition-all duration-1000 !bg-bottom hover:!bg-center"
+                        // bg-clip-text text-transparent
                         style={{
+                            background:
+                                'linear-gradient(to bottom, hsl(var(--muted-foreground)) 0% 33.33%, hsl(var(--primary)) 33.33% 66.66%, hsl(var(--muted-foreground)) 66.66% 100%)',
+                            backgroundSize: '100% 300%',
+
+                            backgroundClip: 'text',
+                            color: 'transparent',
+
                             textOrientation: 'mixed',
                             writingMode: 'vertical-rl',
                         }}

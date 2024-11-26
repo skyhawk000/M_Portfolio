@@ -67,11 +67,14 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             strokeDashoffset: arrowCurb?.getTotalLength(),
         });
 
-        const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
-        tl.to(box, {
-            opacity: 1,
-            strokeDashoffset: 0,
+        const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+        tl.to(externalLinkSVGRef.current, {
+            autoAlpha: 1,
         })
+            .to(box, {
+                opacity: 1,
+                strokeDashoffset: 0,
+            })
             .to(
                 arrowLine,
                 {
@@ -83,7 +86,14 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             .to(arrowCurb, {
                 opacity: 1,
                 strokeDashoffset: 0,
-            });
+            })
+            .to(
+                externalLinkSVGRef.current,
+                {
+                    autoAlpha: 0,
+                },
+                '+=1',
+            );
     });
 
     const handleMouseLeave = contextSafe?.(() => {

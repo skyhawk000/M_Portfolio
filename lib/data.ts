@@ -123,8 +123,8 @@ export const PROJECTS: IProject[] = [
         ],
         liveUrl: 'https://demo.epikcart.siphertech.com/',
         year: 2023,
-        description: `This portfolio showcases a range of web development projects, demonstrating proficiency in creating practical, user-focused applications. From appointment management systems to specialized mobile apps, each project highlights problem-solving skills and technical expertise. Click the arrow to view the Figma Design`,
-        role: `Click the arrow to view the Figma Design. This portfolio showcases a range of web development projects, demonstrating proficiency in creating practical, user-focused applications. From appointment management systems to specialized mobile apps, each project highlights problem-solving skills and technical expertise.`,
+        description: `Epikcart is a multi-vendor e-commerce website where I developed the frontend using React, Redux, and React i18n. The platform offers a seamless shopping experience with advanced features like product filtering, sorting, and dynamic cart management.`,
+        role: `I was responsible for developing the frontend. I converted UI design into a pixel-perfect, responsive and interactive web application. I also implemented state management, API integration, and user authentication. I used techniques like debouncing, memoization, and lazy loading to optimize performance and user experience.`,
     },
     {
         title: 'Resume Roaster',
