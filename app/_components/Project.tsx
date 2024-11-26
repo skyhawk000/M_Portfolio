@@ -72,10 +72,14 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             opacity: 1,
             strokeDashoffset: 0,
         })
-            .to(arrowLine, {
-                opacity: 1,
-                strokeDashoffset: 0,
-            })
+            .to(
+                arrowLine,
+                {
+                    opacity: 1,
+                    strokeDashoffset: 0,
+                },
+                '<0.2',
+            )
             .to(arrowCurb, {
                 opacity: 1,
                 strokeDashoffset: 0,
