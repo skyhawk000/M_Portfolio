@@ -3,12 +3,12 @@ import ProjectDetails from './_components/ProjectDetails';
 import { PROJECTS } from '@/lib/data';
 import { Metadata } from 'next';
 
-export const generateMetadata = ({
+export const generateMetadata = async ({
     params,
 }: {
-    params: { slug: string };
-}): Metadata => {
-    const { slug } = params;
+    params: Promise<{ slug: string }>;
+}) => {
+    const { slug } = await params;
     const project = PROJECTS.find((project) => project.slug === slug);
 
     return {
@@ -16,7 +16,7 @@ export const generateMetadata = ({
             .slice(0, 3)
             .join(', ')}`,
         description: project?.description,
-    };
+    } as Metadata;
 };
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
