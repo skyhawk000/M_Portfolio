@@ -19,15 +19,15 @@ const MENU_LINKS = [
     },
     {
         name: 'About Me',
-        url: '#about-me',
+        url: '/#about-me',
     },
     {
         name: 'Experience',
-        url: '#my-experience',
+        url: '/#my-experience',
     },
     {
         name: 'Projects',
-        url: '#selected-projects',
+        url: '/#selected-projects',
     },
 ];
 

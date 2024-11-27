@@ -154,13 +154,19 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://resume-roaster.vercel.app/',
         year: 2023,
         description:
-            'A web application built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, offering tailored resume feedback and professional writing services. It integrates GPT-4 for AI-powered feedback, helping users refine resumes effectively. The platform also features peer-to-peer reviews and a points-based system, making resume improvement a collaborative and rewarding experience. Designed for freshers, experienced professionals, and programmers, Resume Roaster emphasizes job-specific optimization to enhance application success rates.',
-        role: ``,
+            'Resume Roaster is a web application designed to provide tailored resume feedback and professional writing services. Built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, it integrates GPT-4 for AI-powered recommendations. The platform also includes peer-to-peer reviews with a points-based system, fostering a collaborative and engaging experience. Targeting freshers, experienced professionals, and programmers, it helps optimize resumes for job-specific success.',
+        role: `As the sole developer and business owner, I:\n- Designed and developed the platform end-to-end using Next.js, PostgreSQL, Prisma, and Tailwind CSS.\n- Integrated GPT-4 for AI-driven feedback and insights.\n- Implemented complex SQL queries, including one to identify the top two resumes based on user points.`,
     },
     {
         title: 'Real Estate',
         slug: 'property-pro',
-        techStack: ['React.js', 'Redux', 'Tailwind CSS', 'React i18n'],
+        techStack: [
+            'React.js',
+            'Redux',
+            'Tailwind CSS',
+            'React i18n',
+            'Framer Motion',
+        ],
         thumbnail: '/projects/thumbnail/property-pro.jpg',
         longThumbnail: '/projects/long/property-pro.jpg',
         images: [
@@ -171,8 +177,8 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://demo.propertypro.siphertech.com/',
         year: 2023,
         description:
-            'A real estate management application where I developed the frontend using React, Redux, and Tailwind CSS. The platform provides a seamless user experience for managing, viewing, and exploring property listings. It features dynamic state management for efficient data handling and responsive design for accessibility across devices.',
-        role: ``,
+            'PropertyPro is a real estate management platform offering users a seamless experience to explore, manage, and view property listings. The application emphasizes accessibility and responsive design, ensuring a smooth interface across devices.',
+        role: `As the frontend developer, I:\n- Built the frontend using React, Redux, RTK Query, Framer Motion, and Tailwind CSS.\n- Integrated dynamic state management for efficient handling of property data.\n- Implemented multi-language support with React i18n to cater to diverse audiences.\n- Enhanced user interaction with animations and transitions using Framer Motion.`,
     },
     {
         title: 'Consulting Finance',
