@@ -50,4 +50,8 @@
     .grid {
         @apply gap-[25px];
     }
+
+    .markdown-text ul {
+        @apply pl-5 mt-2 list-disc;
+    }
 }

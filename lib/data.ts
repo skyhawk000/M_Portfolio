@@ -111,7 +111,15 @@ export const PROJECTS: IProject[] = [
     {
         title: 'Epikcart',
         slug: 'epikcart',
-        techStack: ['React', 'Redux', 'React i18n'],
+        techStack: [
+            'React',
+            'Redux',
+            'React i18n',
+            'Tailwind CSS',
+            'Framer Motion',
+            'debouncing',
+            'Api Integration',
+        ],
         thumbnail: '/projects/thumbnail/epikcart.jpg',
         longThumbnail: '/projects/long/epikcart.jpg',
         images: [
@@ -123,8 +131,8 @@ export const PROJECTS: IProject[] = [
         ],
         liveUrl: 'https://demo.epikcart.siphertech.com/',
         year: 2023,
-        description: `Epikcart is a multi-vendor e-commerce website where I developed the frontend using React, Redux, and React i18n. The platform offers a seamless shopping experience with advanced features like product filtering, sorting, and dynamic cart management.`,
-        role: `I was responsible for developing the frontend. I converted UI design into a pixel-perfect, responsive and interactive web application. I also implemented state management, API integration, and user authentication. I used techniques like debouncing, memoization, and lazy loading to optimize performance and user experience.`,
+        description: `Epikcart is a feature-rich, scalable e-commerce platform tailored for large businesses. It features dynamic product filtering, multi-language support with RTL, advanced inventory management, order tracking, and refund systems, offering a comprehensive solution for multi-vendor operations.`,
+        role: `As the frontend developer in a team of five, I:\n- Built the frontend from scratch using React, Redux, RTK Query, and Tailwind CSS.\n- Developed dynamic filtering logic for the product search page with admin-configurable parameters.\n- Integrated multi-language support with React i18n, including RTL handling.\n- Delivered a responsive, user-friendly interface in collaboration with the UI/UX designer.\n`,
     },
     {
         title: 'Resume Roaster',

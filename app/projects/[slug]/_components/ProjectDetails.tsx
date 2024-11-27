@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import React, { useRef } from 'react';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface Props {
     project: IProject;
@@ -66,13 +67,8 @@ const ProjectDetails = ({ project }: Props) => {
             gsap.utils
                 .toArray<HTMLDivElement>('#images > div')
                 .forEach((imageDiv, i) => {
-                    // const image = imageDiv.querySelector(
-                    //     'img',
-                    // ) as HTMLImageElement;
-                    console.log(imageDiv);
-
                     gsap.to(imageDiv, {
-                        backgroundPosition: () => `center 100%`,
+                        backgroundPosition: `center 0%`,
                         ease: 'none',
                         scrollTrigger: {
                             trigger: imageDiv,
@@ -149,7 +145,12 @@ const ProjectDetails = ({ project }: Props) => {
                                 </p>
 
                                 <div className="text-lg">
-                                    <Markdown>{project.description}</Markdown>
+                                    <Markdown
+                                        className="markdown-text"
+                                        remarkPlugins={[remarkGfm]}
+                                    >
+                                        {project.description}
+                                    </Markdown>
                                 </div>
                             </div>
                             {project.role && (
@@ -159,7 +160,12 @@ const ProjectDetails = ({ project }: Props) => {
                                     </p>
 
                                     <div className="text-lg">
-                                        <Markdown>{project.role}</Markdown>
+                                        <Markdown
+                                            className="markdown-text"
+                                            remarkPlugins={[remarkGfm]}
+                                        >
+                                            {project.role}
+                                        </Markdown>
                                     </div>
                                 </div>
                             )}
@@ -176,21 +182,21 @@ const ProjectDetails = ({ project }: Props) => {
                     {project.images.map((image) => (
                         <div
                             key={image}
-                            className="relative w-full aspect-[750/400] bg-background-light"
+                            className="group relative w-full aspect-[750/400] bg-background-light"
                             style={{
                                 backgroundImage: `url(${image})`,
                                 backgroundSize: 'cover',
-                                backgroundPosition: 'center 0%',
+                                backgroundPosition: 'center 50%',
                                 backgroundRepeat: 'no-repeat',
                             }}
                         >
-                            {/* <Image
-                                src={image}
-                                alt={project.title}
-                                loading="lazy"
-                                layout="fill"
-                                className="w-full object-cover object-top transition-all duration-300"
-                            /> */}
+                            <a
+                                href={image}
+                                target="_blank"
+                                className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
+                            >
+                                <ExternalLink />
+                            </a>
                         </div>
                     ))}
                 </div>
