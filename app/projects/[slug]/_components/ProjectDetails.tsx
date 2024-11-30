@@ -43,6 +43,8 @@ const ProjectDetails = ({ project }: Props) => {
     // blur info div and make it smaller on scroll
     useGSAP(
         () => {
+            if (window.innerWidth < 992) return;
+
             gsap.to('#info', {
                 filter: 'blur(3px)',
                 autoAlpha: 0,
@@ -100,7 +102,7 @@ const ProjectDetails = ({ project }: Props) => {
                     id="info"
                 >
                     <div className="relative w-full">
-                        <div className="flex items-start gap-10 mx-auto mb-10 max-w-[635px]">
+                        <div className="flex items-start gap-6 mx-auto mb-10 max-w-[635px]">
                             <h1 className="fade-in-later opacity-0 text-4xl md:text-[60px] leading-none font-anton overflow-hidden">
                                 <span className="inline-block">
                                     {project.title}

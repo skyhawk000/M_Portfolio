@@ -39,12 +39,12 @@ const TransitionLink = ({
             tl.then(() => {
                 if (back) {
                     router.back();
-                } else {
+                } else if (href) {
                     router.push(href.toString());
+                } else if (onClick) {
+                    onClick(e);
                 }
             });
-
-            onClick?.(e);
         },
     );
 
