@@ -10,7 +10,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 import Navbar from '@/components/Navbar';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
-import { GENERAL_INFO } from '@/lib/data';
+import StickyEmail from './_components/StickyEmail';
 
 const antonFont = Anton({
     weight: '400',
@@ -56,25 +56,7 @@ export default function RootLayout({
                     <Preloader />
                     <ScrollProgressIndicator />
                     <ParticleBackground />
-
-                    <a
-                        href={`mailto:${GENERAL_INFO.email}`}
-                        className="max-xl:hidden fixed bottom-32 left-0 block px-3 tracking-[2px]hover:tracking-[3px] transition-all duration-1000 !bg-bottom hover:!bg-center"
-                        // bg-clip-text text-transparent
-                        style={{
-                            background:
-                                'linear-gradient(to bottom, hsl(var(--muted-foreground)) 0% 33.33%, hsl(var(--primary)) 33.33% 66.66%, hsl(var(--muted-foreground)) 66.66% 100%)',
-                            backgroundSize: '100% 300%',
-
-                            backgroundClip: 'text',
-                            color: 'transparent',
-
-                            textOrientation: 'mixed',
-                            writingMode: 'vertical-rl',
-                        }}
-                    >
-                        {GENERAL_INFO.email}
-                    </a>
+                    <StickyEmail />
                 </ReactLenis>
             </body>
         </html>
