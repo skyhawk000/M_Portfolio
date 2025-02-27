@@ -11,6 +11,7 @@ import Navbar from '@/components/Navbar';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const antonFont = Anton({
     weight: '400',
@@ -38,6 +39,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <GoogleTagManager gtmId="G-MHLY1LNGY5" />
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
