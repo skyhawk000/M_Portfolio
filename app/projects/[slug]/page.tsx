@@ -3,6 +3,10 @@ import ProjectDetails from './_components/ProjectDetails';
 import { PROJECTS } from '@/lib/data';
 import { Metadata } from 'next';
 
+export const generateStaticParams = async () => {
+    return PROJECTS.map((project) => ({ slug: project.slug }));
+};
+
 export const generateMetadata = async ({
     params,
 }: {
