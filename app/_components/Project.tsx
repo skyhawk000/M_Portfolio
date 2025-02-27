@@ -150,14 +150,19 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                         </span>
                     </h4>
                     <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
-                        {project.techStack.slice(0, 3).map((tech, idx) => (
-                            <div className="gap-3 flex items-center" key={tech}>
-                                <span className="">{tech}</span>
-                                {idx !== project.techStack.length - 1 && (
-                                    <span className="inline-block size-2 rounded-full bg-background-light"></span>
-                                )}
-                            </div>
-                        ))}
+                        {project.techStack
+                            .slice(0, 3)
+                            .map((tech, idx, stackArr) => (
+                                <div
+                                    className="gap-3 flex items-center"
+                                    key={tech}
+                                >
+                                    <span className="">{tech}</span>
+                                    {idx !== stackArr.length - 1 && (
+                                        <span className="inline-block size-2 rounded-full bg-background-light"></span>
+                                    )}
+                                </div>
+                            ))}
                     </div>
                 </div>
             </div>
