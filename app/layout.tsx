@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <GoogleAnalytics gaId="GTM-M7MBXPWL" />
+            <GoogleAnalytics gaId="G-MHLY1LNGY5" />
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
