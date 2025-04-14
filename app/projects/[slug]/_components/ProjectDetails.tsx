@@ -1,4 +1,5 @@
 'use client';
+import parse from 'html-react-parser';
 import ArrowAnimation from '@/components/ArrowAnimation';
 import TransitionLink from '@/components/TransitionLink';
 import { IProject } from '@/types';
@@ -6,9 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
-import React, { useRef } from 'react';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { useRef } from 'react';
 
 interface Props {
     project: IProject;
@@ -155,13 +154,8 @@ const ProjectDetails = ({ project }: Props) => {
                                     Description
                                 </p>
 
-                                <div className="text-lg">
-                                    <Markdown
-                                        className="markdown-text"
-                                        remarkPlugins={[remarkGfm]}
-                                    >
-                                        {project.description}
-                                    </Markdown>
+                                <div className="text-lg prose-xl markdown-text">
+                                    {parse(project.description)}
                                 </div>
                             </div>
                             {project.role && (
@@ -171,12 +165,7 @@ const ProjectDetails = ({ project }: Props) => {
                                     </p>
 
                                     <div className="text-lg">
-                                        <Markdown
-                                            className="markdown-text"
-                                            remarkPlugins={[remarkGfm]}
-                                        >
-                                            {project.role}
-                                        </Markdown>
+                                        {parse(project.role)}
                                     </div>
                                 </div>
                             )}
